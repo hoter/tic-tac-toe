@@ -4,14 +4,15 @@ html
 body
     margin 0
     padding 0
-    width document-height
+    width document-width
     height document-height
 
 #game
-    width game-height
+    display: none;
+    width game-width
     height game-height
     background game-background
 
     .square
         background square-background
-        border: square-border-width solid game-background
+        border square-border-width solid game-background
