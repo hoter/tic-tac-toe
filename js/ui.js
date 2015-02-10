@@ -22,6 +22,6 @@ onReady(function() {
         gamePage.style.display = 'table';
         
         var tictactoe = new Game();
-        console.log(tictactoe);
+        tictactoe.start();
     });
 });
