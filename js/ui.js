@@ -20,5 +20,8 @@ onReady(function() {
     newGame.addEventListener('click', function() {
         menuPage.style.display = 'none';
         gamePage.style.display = 'table';
+        
+        var tictactoe = new Game();
+        console.log(tictactoe);
     });
 });
