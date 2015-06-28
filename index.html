@@ -1,48 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Tic Tac Toe game</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/main.css">
-        <script src="js/ready.js"></script>
-        <script src="js/ui.js"></script>
-        <script src="js/engine.js"></script>
+
+        <script src="js/lib/jquery.js"></script>
+		<script src="js/lib/backbone.js"></script>
+		<script src="js/lib/backbone.localStorage.js"></script>
     </head>
     <body>
-        <!-- Menu page -->
-        <table id="menu-page" class="page">
-            <tr>
-                <td>
-                    <a href="#" id="new-game">New game</a>
-                    <a href="#" id="game">Continue</a>
-                    <a href="#" id="help">Help</a>
-                </td>
-            </tr>
-        </table>
         
-        <!-- Game page -->
-        <table id="game-page" class="page">
-            <tr class="row1">
-                <td class="square col1"></td>
-                <td class="square col2"></td>
-                <td class="square col3"></td>
-            </tr>
-            <tr class="row2">
-                <td class="square col1"></td>
-                <td class="square col1"></td>
-                <td class="square col1"></td>
-            </tr>
-            <tr class="row3">
-                <td class="square col1"></td>
-                <td class="square col1"></td>
-                <td class="square col1"></td>
-            </tr>
-        </table>
-        
-        <!-- Help page -->
-        <div id="help-page" class="page">
-            Tic Tac Toe
-        </div>
     </body>
 </html>
