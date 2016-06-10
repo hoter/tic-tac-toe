@@ -7,16 +7,30 @@ import {
 } from 'react-native';
 var Menu = require('./Menu');
 var GameBoard = require('./GameBoard');
+var Player = require('./Player');
 
 var Game = React.createClass({
+  players = [];
+
   getInitialState: function() {
     return {
       isMenuPage: true,
     };
   },
 
-  startGame: function() {
+  blockGameBoard: function() {
+    Alert.alert('TEST', 'test');
+  }
+
+  startGame: function(mode) {
     this.setState({isMenuPage: false});
+    this.setState({mode: mode});
+    if (mode) {
+      this.players = [new Player(0, this.blockGameBoard), new Player(0, this.blockGameBoard)];
+    }
+    else {
+      this.players = [new Player(0, this.blockGameBoard), new Player(1, this.blockGameBoard)];
+    }
   },
 
   render: function() {

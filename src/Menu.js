@@ -7,13 +7,21 @@ import {
 } from 'react-native';
 
 class Menu extends Component {
+  startSingleGame() {
+    this.props.startGameCallback(true);
+  }
+
+  startMultipleGame() {
+    this.props.startGameCallback(false);
+  }
+
   render() {
     return (
       <View style={styles.menu} >
-        <TouchableHighlight style={styles.buttonWrapper} onPress={this.props.startGameCallback} >
+        <TouchableHighlight style={styles.buttonWrapper} onPress={this.startSingleGame} >
           <Text style={styles.button} >New single game</Text>
         </TouchableHighlight>
-        <TouchableHighlight style={styles.buttonWrapper} onPress={this.props.startGameCallback} >
+        <TouchableHighlight style={styles.buttonWrapper} onPress={this.startMultipleGame} >
           <Text style={styles.button} >New multiple game</Text>
         </TouchableHighlight>
       </View>
