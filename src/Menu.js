@@ -11,14 +11,10 @@ class Menu extends Component {
     return (
       <View style={styles.menu} >
         <TouchableHighlight style={styles.buttonWrapper} onPress={this.props.startGameCallback} >
-          <View>
-            <Text style={styles.button} >New single game</Text>
-          </View>
+          <Text style={styles.button} >New single game</Text>
         </TouchableHighlight>
         <TouchableHighlight style={styles.buttonWrapper} onPress={this.props.startGameCallback} >
-          <View>
-            <Text style={styles.button} >New multiple game</Text>
-          </View>
+          <Text style={styles.button} >New multiple game</Text>
         </TouchableHighlight>
       </View>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Alert,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -37,13 +38,23 @@ var GameBoardRow = React.createClass({
 });
 
 var GameBoardCell = React.createClass({
+  getInitialState: function() {
+    return {
+      value: '',
+    };
+  },
+
+  chooseCell: function() {
+    if (!this.state.value) {
+      this.setState({value: 'x'});
+    }
+  },
+
   render: function() {
     return (
-      <View style={styles.gameBoardCell} >
-        <TouchableHighlight>
-          <Text> </Text>
-        </TouchableHighlight>
-      </View>
+      <TouchableHighlight onPress={this.chooseCell} style={styles.gameBoardCell} >
+        <Text style={styles.gameBoardCellValue} >{this.state.value}</Text>
+      </TouchableHighlight>
     );
   }
 });
@@ -58,11 +69,18 @@ var styles = StyleSheet.create({
   },
   gameBoardCell: {
     flex: 1,
-    justifyContent: 'center',
     borderStyle: 'solid',
     borderColor: '#F4F4F4',
     borderWidth: 2,
     backgroundColor: '#FF3366',
+    justifyContent: 'center',
+  },
+  gameBoardCellValue: {
+    color: '#FFF',
+    fontSize: 160,
+    margin: 0,
+    lineHeight: 250,
+    textAlign: 'center',
   },
 });
 
