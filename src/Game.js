@@ -29,7 +29,7 @@ var Game = React.createClass({
     }
 
     return (
-      <View>
+      <View style={styles.game} >
         <GameBoard />
       </View>
     );
