@@ -10,12 +10,12 @@ class Menu extends Component {
   render() {
     return (
       <View style={styles.menu} >
-        <TouchableHighlight style={styles.buttonWrapper} >
+        <TouchableHighlight style={styles.buttonWrapper} onPress={this.props.startGameCallback} >
           <View>
             <Text style={styles.button} >New single game</Text>
           </View>
         </TouchableHighlight>
-        <TouchableHighlight style={styles.buttonWrapper} >
+        <TouchableHighlight style={styles.buttonWrapper} onPress={this.props.startGameCallback} >
           <View>
             <Text style={styles.button} >New multiple game</Text>
           </View>

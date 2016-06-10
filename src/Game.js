@@ -1,20 +1,40 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
+  Alert,
   StyleSheet,
   Text,
   View
 } from 'react-native';
 var Menu = require('./Menu');
+var GameBoard = require('./GameBoard');
 
-class Game extends Component {
-  render() {
+var Game = React.createClass({
+  getInitialState: function() {
+    return {
+      isMenuPage: true,
+    };
+  },
+
+  startGame: function() {
+    this.setState({isMenuPage: false});
+  },
+
+  render: function() {
+    if (this.state.isMenuPage) {
+      return (
+        <View style={styles.game} >
+        	<Menu startGameCallback={this.startGame} />
+        </View>
+      );
+    }
+
     return (
-      <View style={styles.game} >
-      	<Menu />
+      <View>
+        <GameBoard />
       </View>
     );
   }
-}
+});
 
 var styles = StyleSheet.create({
   game: {
